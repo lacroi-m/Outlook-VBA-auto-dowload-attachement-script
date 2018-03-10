@@ -1,4 +1,3 @@
-
 Public Sub saveAttachtoDisk(itm As Outlook.MailItem)
 
 Dim objAtt As Outlook.Attachment
@@ -6,7 +5,7 @@ Dim saveFolder As String
 Dim dateFormat
     dateFormat = Format(Now, "yyyy-mm-dd H-mm")
 
-saveFolder = "C:\Users\ze\Documents\Attachements"
+saveFolder = "C:\Users\" & Environ$("computername") & "\Documents"
 
      For Each objAtt In itm.Attachments
         If StrComp(Left(objAtt.FileName, 16), "attachement.dat", vbTextCompare) = 0 Then
